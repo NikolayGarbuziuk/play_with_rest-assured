@@ -29,13 +29,13 @@ public class ReqresTest {
     @Test
     void successFullLoginNegative() {
         String data = "{ \"email\": \"eve.holt@reqres.in\" }";
-        given().
-                contentType(JSON).
-                body(data).
-                when().
-                post("api/login").
-                then().
-                statusCode(400).
-                body("error", is("Missing password"));
+        given()
+                .contentType(JSON)
+                .body(data)
+                .when()
+                .post("api/login")
+                .then()
+                .statusCode(400)
+                .body("error", is("Missing password"));
     }
 }
